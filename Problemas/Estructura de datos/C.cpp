@@ -5,28 +5,32 @@ using namespace std;
 #define input freopen("in.txt","r",stdin)
 #define output freopen("out.txt","w",stdout)
 
-int main () {
+int main() {
     int n;
-    vector<int> numeros(n);
-    for(int i=0;i<n;i++){
-        cin>>numeros[i];
-    }
-    vector<bool> vis(n);
-    for (int i = 1; i <  n; i++){
-        int diferencia = abs(numeros[i-1]-numeros[i]);
-        if(diferencia<n){
-            vis[diferencia]=1;
+    while (cin >> n) {
+        vector<int> sequencia(n);
+        vector<bool> difExiste(n - 1, false);
+        for (int i = 0; i < n; ++i) {
+            cin >> sequencia[i];
+        }
+        for (int i = 1; i < n; ++i) {
+            int dif = abs(sequencia[i] - sequencia[i - 1]);
+            if (dif >= 1 && dif <= n - 1) {
+                difExiste[dif - 1] = true;
+            }
+        }
+        bool Jolly = true;
+        for (bool existe : difExiste) {
+            if (!existe) {
+                Jolly = false;
+                break;
+            }
+        }
+        if (Jolly) {
+            cout << "Jolly" << endl;
+        } else {
+            cout << "Not jolly" << endl;
         }
     }
-    bool Sol=true;
-    for(int i=1;i<n;i++){
-        if(vis[i]==false) {
-            Sol=false;
-        }
-    }
-    if(Sol) {
-        cout<<"si";
-    }else{
-        cout<<"no";
-    }
+    return 0;
 }
