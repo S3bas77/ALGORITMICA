@@ -66,10 +66,10 @@ int main(){
     }
     bfs(0);
     int totalLlamadas=0;
-    for (int i = 0; i<nodos; i++){
+    for (int i = 1; i<nodos; i++){
         if (Enterados[i]) {
             totalLlamadas++;
         }
     }
-    cout<<totalLlamadas-1;
+    cout<<totalLlamadas;
 }
