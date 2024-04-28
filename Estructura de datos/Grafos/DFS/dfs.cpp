@@ -8,18 +8,18 @@ using namespace std;
 bool vis[10000];
 vector<int> grafo[10000];
 void dfs (int nodoInicial) {
-    stack<int> pilita;
-    pilita.push(nodoInicial);
-    while(!pilita.empty()){ // La pilita no esta vacia ????
-        int nodoActual = pilita.top(); // obtener el primer elemento de la pila
-        pilita.pop();
+    stack<int> pila;
+    pila.push(nodoInicial);
+    while(!pila.empty()){ // La pila no esta vacia ????
+        int nodoActual = pila.top(); // obtener el primer elemento de la pila
+        pila.pop();
         if(!vis[nodoActual]) {
             vis[nodoActual] = true; // Marco como visitado al nodo actual
             // empezar a visitar a sus amigos 
             for(int i = 0; i < grafo[nodoActual].size(); i++ ){
                 int amigo = grafo[nodoActual][i]; // vecino o amigo
                 if(!vis[amigo]) { // El amigo no ha sido visitado ?
-                    pilita.push(amigo);
+                    pila.push(amigo);
                 } 
             }   
         }
@@ -41,8 +41,8 @@ int main() {
     cin>>S>>T;
     dfs(S);
     if(vis[T]) { // logre visitar el 7 
-        cout<<"Si lo podria conocer"<<endl;
+        cout<<"Lo puede conocer"<<endl;
     } else {
-        cout<<"No lo podria conocer"<<endl;
+        cout<<"No lo puede conocer"<<endl;
     }
 }
