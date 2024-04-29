@@ -32,7 +32,6 @@ vector<vector<bool>>& visitado, int r, int c, int m, int n) {
         }
     }
 }
-
 // Función para contar los depósitos de petróleo en la cuadrícula
 int contador(vector<vector<char>>& grid, int m, int n) {
     vector<vector<bool>> visitado(m, vector<bool>(n, false));

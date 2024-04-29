@@ -20,6 +20,5 @@ int main() {
     for (iterador = lista.begin(); iterador != lista.end(); iterador++) {
         cout << *iterador << endl;
     }
-
     return 0;
 }
