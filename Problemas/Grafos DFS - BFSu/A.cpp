@@ -32,7 +32,7 @@ bool alance(int primerNodo, const vector<vector<int>>& graph, int ToEstaciones) 
 }
 
 // Función para encontrar las dos estaciones más cercanas
-vector<vector<int>> buildGraph(const vector<pair<int, int>>& estaciones) {
+vector<vector<int>> grafo(const vector<pair<int, int>>& estaciones) {
     int n = estaciones.size();
     vector<vector<int>> graph(n);
 
@@ -77,7 +77,8 @@ int main() {
                 >> estaciones[i].second;
         }
         // Construir el grafo conectando las dos estaciones más cercanas
-        vector<vector<int>> graph = buildGraph(estaciones);
+        vector<vector<int>> graph = grafo
+    (estaciones);
         // Verificar si se pueden alcanzar todas las estaciones desde la primera (nodo 0)
         bool isReachable = alance(0, graph, n);
         if (isReachable) {
