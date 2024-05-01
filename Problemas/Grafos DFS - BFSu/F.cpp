@@ -20,7 +20,7 @@ int minMovimiento(const string &comienzo, const string &final) {
 
     auto [sr, sc] = coordenadas(comienzo); //sr= start row, sc= start column
     auto [er, ec] = coordenadas(final);    //er= end row, ec= end column
-    q.push({sr, sc});
+    q.push({sr, sc}); //nuevo elemento en el tope de la fila
     visitado.insert(sr * 8 + sc);
 
     for (int moves = 0; !q.empty(); ++moves) {
