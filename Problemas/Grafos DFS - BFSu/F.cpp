@@ -12,7 +12,7 @@ int minMovimiento(const string &comienzo, const string &final) {
     auto coordenadas = [](const string &pos) { 
         return make_pair(pos[1] - '1', pos[0] - 'a'); 
     };
-    auto is_within_bounds = [](int r, int c) { 
+    auto limites = [](int r, int c) { 
         return r >= 0 && r < 8 && c >= 0 && c < 8; 
     };
     queue<pair<int, int>> q;
@@ -29,7 +29,7 @@ int minMovimiento(const string &comienzo, const string &final) {
             if (r == er && c == ec) return moves;
             for (const auto &[dr, dc] : movimientos) {
                 int nr = r + dr, nc = c + dc, idx = nr * 8 + nc;
-                if (is_within_bounds(nr, nc) && !visitado.count(idx)) {
+                if (limites(nr, nc) && !visitado.count(idx)) {
                     q.push({nr, nc});
                     visitado.insert(idx);
                 }
