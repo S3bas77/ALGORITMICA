@@ -4,8 +4,10 @@ using namespace std;
 
 #define input freopen("in.txt","r",stdin)
 #define output freopen("out.txt","w",stdout)
+
 vector<int> grafo[1010];
 vector<int> vis(1010);
+
 int cont=0;
 void dfs(int inicial){
     vis[inicial]=true;
