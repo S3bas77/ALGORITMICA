@@ -6,32 +6,46 @@ using namespace std;
 #define output freopen("out.txt","w",stdout)
 
 int main() {
+    input;
+    output;
     int numCar;
-    while(cin>>numCar && numCar) {
-        vector<int> positions(numCar,0);
-        bool noSolution = false;
-        for(int i = 0; i < numCar; i++){
-            int car, finalPos;
-            cin>>car>>finalPos;
-            if(i+finalPos >= numCar || i+finalPos < 0){
-                noSolution = true;
-                continue;
+    while (cin >> numCar && numCar) { // Mientras haya datos y `numCar` sea positivo
+        vector<int> positions(numCar, 0); // Vector para la parrilla de salida
+        bool noSolution = false; // Bandera para indicar si hay solución
+
+        for (int i = 0; i < numCar; i++) {
+            int car, relativePos; // Leer número del auto y posición relativa
+            cin >> car >> relativePos;
+
+            // Calcular la posición final
+            int finalPos = i + relativePos;
+
+            // Verificar límites de posición
+            if (finalPos >= numCar || finalPos < 0) {
+                noSolution = true; // Posición fuera de rango
+                break; // Salir si no es válido
             }
-            if(positions[i+finalPos] != 0){
-                noSolution = true;
-                continue;
+
+            // Verificar superposiciones
+            if (positions[finalPos] != 0) {
+                noSolution = true; // Ya está ocupada
+                break;
             }
-            positions[i+finalPos] = car;
+
+            positions[finalPos] = car; // Asignar el auto a la posición correcta
         }
-        if(noSolution){
-            cout<<-1<<endl;
-        }else{
-            cout<<positions[0];
-            for(int i=1; i< numCar; i++){
-                cout<<" "<<positions[i];
+
+        // Imprimir el resultado
+        if (noSolution) {
+            cout << -1 << endl; // No es posible reconstruir
+        } else {
+            cout << positions[0]; // Primer auto
+            for (int i = 1; i < numCar; i++) {
+                cout << " " << positions[i]; // Autos restantes
             }
-            cout<<endl;
+            cout << endl; // Salto de línea al final
         }
     }
-    return 0; 
+
+    return 0; // Termina el programa
 }

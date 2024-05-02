@@ -1,43 +1,46 @@
-PROBLEMA A-Estructura de datos
-In car races, there is always a high pole next to the finish line of the track. 
-Before the race starts, the pole is used to display the starting grid. The number 
-of the first car in the grid is displayed at the top of the pole, the number of the 
-car in second place is shown below that, and so on. During the race, the pole is used to 
-display the current position of each car: the car that is winning the race has its 
-number displayed at the top of the pole, followed by the car that is in second place,
-and so on.
 
-Besides showing the current position of a car, the pole is also used to display 
-the number of positions the cars have won or lost, relative to the starting grid. 
-This is done by showing, side by side to the car number, an integer number. A positive
-value v beside a car number in the pole means that car has won v positions relative 
-to the starting grid. A negative value v means that car has lost v positions relative 
-to the starting grid. A zero beside a car number in the pole means the car has neither 
-won nor lost any positions relative to the starting grid (the car is in the same 
-position it started). We are in the middle of the Swedish Grand Prix, the last
-race of the World Championship. The race director, Dr. Shoo Makra, is getting worried: 
-there have been some complaints that the software that controls the pole position system 
-is defective, showing information that does not reflect the true race order.
-Dr. Shoo Makra devised a way to check whether the pole system is working properly. 
-Given the information currently displayed in the pole, he wants to reconstruct the 
-starting grid of the race. If it is possible to reconstruct a valid starting grid, 
-he plans to check it against the real starting grid. On the other hand, if it is not 
-possible to reconstruct a valid starting grid, the pole system is indeed defective.
-Can you help Dr. Shoo Makra?
+En las carreras de autos, siempre hay un poste alto junto a la línea de meta de la pista. 
+Antes de que comience la carrera, el poste se usa para mostrar la parrilla de salida. 
+El número del primer auto en la parrilla se muestra en la parte superior del poste, 
+el número del auto en segundo lugar se muestra justo debajo, y así sucesivamente. 
+Durante la carrera, el poste se utiliza para mostrar la posición actual de cada auto: 
+el auto que va ganando tiene su número en la parte superior del poste, seguido por 
+el auto que va en segundo lugar, y así sucesivamente.
 
-Input
-The input contains several test cases. The first line of a test case contains one 
-integer N indicating the number of cars in the race (2 ≤ N ≤ 103). Each of the next 
-N lines contains two integers C and P, separated by one space, representing respectively 
-a car number (1 ≤ C ≤ 104) and the number of positions that car has won or lost relative 
-to the starting grid (−106 ≤ P ≤ 106), according to the pole system. All cars in a race 
-have different numbers. The end of input is indicated by a line containing only one zero.
+Además de mostrar la posición actual de un auto, el poste también se usa para 
+mostrar el número de posiciones que los autos han ganado o perdido en relación 
+con la parrilla de salida. Esto se muestra mostrando, junto al número del auto, 
+un valor entero. Un valor positivo v al lado del número del auto significa que el 
+auto ha ganado v posiciones en relación con la parrilla de salida. Un valor negativo 
+v significa que el auto ha perdido v posiciones en relación con la parrilla de salida.
+Un valor cero al lado del número del auto significa que el auto ni ha ganado ni ha 
+perdido posiciones en relación con la parrilla de salida (el auto está en la misma 
+posición en la que comenzó). Estamos a mitad del Gran Premio de Suecia, la última 
+carrera del Campeonato Mundial. El director de la carrera, Dr. Shoo Makra, está preocupado: 
+ha habido algunas quejas de que el software que controla el sistema de posiciones en 
+el poste está defectuoso, mostrando información que no refleja el orden real de la carrera.
 
-Output
-For each test case in the input, your program must print a single line, containing 
-the reconstructed starting grid, with car numbers separated by single spaces. 
-If it is not possible to reconstruct a valid starting grid, the line must contain 
-only the value -1.
+El Dr. Shoo Makra ideó una forma de verificar si el sistema del poste está 
+funcionando correctamente. Dada la información que se muestra actualmente en 
+el poste, él quiere reconstruir la parrilla de salida de la carrera. Si es posible 
+reconstruir una parrilla de salida válida, planea compararla con la parrilla de salida real. 
+Por otro lado, si no es posible reconstruir una parrilla de salida válida, el sistema 
+del poste está efectivamente defectuoso. ¿Puedes ayudar al Dr. Shoo Makra?
+
+Entrada
+La entrada contiene varios casos de prueba. La primera línea de un caso de prueba 
+contiene un entero N, que indica el número de autos en la carrera (2 ≤ N ≤ 103). 
+Cada una de las siguientes N líneas contiene dos enteros C y P, separados por un espacio,
+representando respectivamente el número de un auto (1 ≤ C ≤ 104) y el número de
+posiciones que ese auto ha ganado o perdido en relación con la parrilla de salida 
+(−106 ≤ P ≤ 106), según el sistema del poste. Todos los autos en una carrera tienen
+números diferentes. El final de la entrada se indica con una línea que contiene solo un cero.
+
+Salida
+Para cada caso de prueba en la entrada, tu programa debe imprimir una línea única, 
+que contenga la parrilla de salida reconstruida, con números de autos separados por 
+espacios simples. Si no es posible reconstruir una parrilla de salida válida, la línea 
+debe contener solo el valor -1.
 
 Sample Input                        Sample Output
 4                                   1 2 3 4

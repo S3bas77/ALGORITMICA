@@ -21,17 +21,17 @@ int minMovimiento(const string &comienzo, const string &final) {
     auto [sr, sc] = coordenadas(comienzo); //sr= start row, sc= start column
     auto [er, ec] = coordenadas(final);    //er= end row, ec= end column
     q.push({sr, sc}); //nuevo elemento en el tope de la fila
-    visitado.insert(sr * 8 + sc);
+    visitado.insert(sr * 8 + sc); //representa una posición única en un tablero de ajedrez
 
     for (int moves = 0; !q.empty(); ++moves) {
         for (int i = q.size(); i--; ) {
             auto [r, c] = q.front(); q.pop();
             if (r == er && c == ec) return moves;
-            for (const auto &[dr, dc] : movimientos) {
-                int nr = r + dr, nc = c + dc, idx = nr * 8 + nc;
+            for (const auto &[dr, dc] : movimientos) { //diferencia de la fila o cola
+                int nr = r + dr, nc = c + dc, idx = nr * 8 + nc; //new row, new column
                 if (limites(nr, nc) && !visitado.count(idx)) {
                     q.push({nr, nc});
-                    visitado.insert(idx);
+                    visitado.insert(idx);//indice
                 }
             }
         }

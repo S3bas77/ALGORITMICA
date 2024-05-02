@@ -33,21 +33,21 @@ using namespace std;
 #define input freopen("in.txt","r",stdin)
 #define output freopen("out.txt","w",stdout)
 
-bool Enterados[10000];
+bool Visitado[10000];
 vector<int> grafo [10000];
 
-void bfs(int pedro){
+void bfs(int pedro){//parametro
     queue<int> Llamadas;
-    Llamadas.push(pedro);
-    Enterados[pedro]=true;
+    Llamadas.push(pedro);//Se agrega el nodo inicial a la cola para comenzar el BFS.
+    Visitado[pedro]=true;//Se marca el nodo inicial como visitado.
 
-    while (!Llamadas.empty()){
+    while (!Llamadas.empty()){ //mientras haya nodos en la cola por explorar
         int nodoActual = Llamadas.front();
         Llamadas.pop();
-        for (int amigo:grafo[nodoActual]){
-            if(!Enterados[amigo]){
-                Llamadas.push(amigo);
-                Enterados[amigo]=true;
+        for (int amigo:grafo[nodoActual]){//Este bucle recorre todos los nodos conectados al nodoActual 
+            if(!Visitado[amigo]){
+                Llamadas.push(amigo);//Se añade el vecino no visitado a la cola para procesarlo más tarde.
+                Visitado[amigo]=true;
             }
         }
     }
@@ -67,7 +67,7 @@ int main(){
     bfs(0);
     int totalLlamadas=0;
     for (int i = 1; i<nodos; i++){
-        if (Enterados[i]) {
+        if (Visitado[i]) {
             totalLlamadas++;
         }
     }

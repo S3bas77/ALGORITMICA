@@ -1,3 +1,19 @@
+//Una secuencia de n>0 enteros se llama "jolly jumper" si los valores absolutos de las 
+//diferencias entre elementos sucesivos toman todos los valores desde 1 hasta n−1. 
+//Por ejemplo:
+//1 4 2 3
+//es un jolly jumper, porque las diferencias absolutas son 3, 2 y 1 respectivamente. 
+//La definición implica que cualquier secuencia de un solo entero es un jolly jumper. 
+//Debes escribir un programa para determinar si una secuencia dada es un jolly jumper.
+
+//Entrada
+//Cada línea de entrada contiene un entero n ≤ 3000, seguido de n enteros que representan 
+//la secuencia. Los valores en la secuencia tienen como máximo un valor absoluto de 300,000. 
+//La entrada contiene como máximo 10 líneas.
+
+//Salida
+//Para cada línea de entrada, genera una línea de salida que diga “Jolly” o “Not jolly”.
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -6,7 +22,9 @@ using namespace std;
 #define output freopen("out.txt","w",stdout)
 
 int main() {
-    int n;
+    input;
+    output;
+    int n;//longitud de la secuencia
     while (cin >> n) {
         vector<int> sequencia(n);
         vector<bool> difExiste(n - 1, false);
