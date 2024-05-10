@@ -1,3 +1,0 @@
-PROGRAMACION DINAMICA
-se maneja por sub_problemas de los problemas
-trata de optimizar, o sea sacar el min valor, y sacar el maximo valor

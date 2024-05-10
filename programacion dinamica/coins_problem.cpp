@@ -39,18 +39,6 @@ int f2(int n) {
     }
     return dp2[3][n];
 }
-int mincoin(int n){
-    for(int i = 1; i <= 3; i++) {// 2, 3, 5
-        dp2[i][0] = 0;
-        for(int j = 1; j <= n; j++) { // 1 ==> 15
-            dp2[i][j] = dp2[i-1][j];
-            if(j - coins[i-1] >= 0) {
-                dp2[i][j] += dp2[i][j - coins[i-1]];
-            }
-        }
-    }
-    return dp2[3][n];
-}
 
 int dp3[1000];
 int f3(int n) {
@@ -67,7 +55,7 @@ int f3(int n) {
 }
 
 int main() {
-    int n = 10;
+    int n = 15;
     memset(dp2, -1, sizeof(dp2));
     cout<<f2(n)<<endl;
 }
