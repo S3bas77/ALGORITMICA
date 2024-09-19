@@ -1,0 +1,65 @@
+                                        SILABO
+// ESTRUCTURA DE DATOS
+// TRIE
+// segment tree
+// BIT
+// Union find
+// es necesario estudiar estructura porque va a estar orientado a objetvos, sera un avance muy abstracto
+
+// RECURSIVIDAD Y BACKTRACKING (poder de la fuerza bruta, y veremos que de fuerza bruta vamos a aplicar el backtracking, ademas de PODA)
+// ultimos ejercicios de programacion dinamica como:
+// Digid DP
+// cut rodding
+// Floyd Whorssall (n^3)
+
+// TEORIA DE GRAFOS
+// KRUSTAL MST
+// maximo flujo
+ 
+// TEORIA DE NUMEROS
+// Teorema fundamental aritmetica
+// Teorema de Euler
+// Algoritmo de euclides
+// Algoritmo de euclides extendidio
+// Busqueda binaria (metodo de biseccion)
+
+// CADENAS
+// patrones
+// kmp
+// algoritmo z
+// edit distance DP
+
+// GEOMETRIA COMPUTACIONAL
+// puntos y vectores
+// rectas 
+// segmentos
+// convexos y no convexos
+
+Para sobrevivir debo recordar por que me metí a sistemas
+
+PARCIALES
+primer parcial 30 PUNTOS
+3 de octubre
+examen 20 puntos
+practicas 10 puntos
+
+segundo parcial 30 PUNTOS
+15 de octubre
+examen 20 puntos
+practicas 30 puntos
+
+tercer parcial 40 PUNTOS
+5 de noviembre
+proyecto 20 puntos
+examen 20 puntos
+
+
+
+
+
+
+
+
+
+
+
