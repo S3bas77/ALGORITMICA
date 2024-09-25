@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 
-#define input freopen ("inttrie.txt","r",stdin)
-#define output freopen ("out.txt","r",stdout)
+#define input freopen ("in.txt","r",stdin)
+#define output freopen ("out.txt","w",stdout)
 using namespace std;
 
 struct node {
     char currentCharacter;
     bool endWord;
-    node *children[26]; //el asterisco dice que no importa donde van a crear el children
+    node *children[27]; //el asterisco dice que no importa donde van a crear el children
     node(){
         endWord = false;
         for (int i = 0; i < 26; i++)
@@ -32,7 +32,7 @@ void insert(node *trie, string word){
 
 bool search(node *trie, string word){
     node *currentNode = trie;
-    for (int i = 0; i < word.size();i++){
+    for (int i = 0; i < word.size(); i++){
         int index = word[i] - 'a';
         if(currentNode->children[index] == NULL) {
             return false;
@@ -43,6 +43,8 @@ bool search(node *trie, string word){
 }
 
 int main(){
+    input;
+    output;
     int wordsNumber;
     cin >> wordsNumber;
     node *trie = new node();
@@ -51,12 +53,12 @@ int main(){
         cin >> word;
         insert(trie, word);
     }
-    if (search(trie,"apt")) { 
+    if (search(trie,"pa")) { 
         cout<<"existe la palara apt"<<endl;
     } else {
         cout<<"no exite la palabra apt"<<endl;
     }
-    if (search(trie,"appli")) { 
+    if (search(trie,"pablo")) { 
         cout<<"existe la palara appli"<<endl;
     } else {
         cout<<"no exite la palabra appli"<<endl;
