@@ -8,9 +8,19 @@
 
 // RECURSIVIDAD Y BACKTRACKING (poder de la fuerza bruta, y veremos que de fuerza bruta vamos a aplicar el backtracking, ademas de PODA)
 // ultimos ejercicios de programacion dinamica como:
-// Digid DP
+// Digid DP (dinamick problem)
 // cut rodding
 // Floyd Whorssall (n^3)
+
+BACKTRACKING
+fuerza bruta                lento (se trata de hacer todos los casos)
+divide y venceras           complicado pero rapido
+greedy --> Codicioso        errores
+DP subproblemas             compila rapido
+
+
+
+
 
 // TEORIA DE GRAFOS
 // KRUSTAL MST
